@@ -59,7 +59,7 @@ const sendReminderEmail = async (to, subject, html) => {
       subject: subject,
       html: html,
     });
-    console.log('Email sent:', response);
+    console.log('Email successfully sent ✅ :', response.data.id);
   } catch (error) {
     console.error('Email error:', error);
   }
