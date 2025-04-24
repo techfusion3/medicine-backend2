@@ -10,8 +10,9 @@ cron.schedule('* * * * *', async () => {
     console.log('[⏰ CRON] Checking reminders...');
 
     const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const istTime = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
+    const hours = istTime.getHours().toString().padStart(2, '0');
+    const minutes = istTime.getMinutes().toString().padStart(2, '0');
     const currentTime = `${hours}:${minutes}`;
 
     const reminders = await Reminder.find({}).lean();
