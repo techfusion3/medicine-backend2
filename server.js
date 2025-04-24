@@ -17,6 +17,13 @@ const pushRoutes = require('./routes/pushRoutes');
 // Initialize express app
 const app = express();
 
+// Allow the vercel frontend
+const allowedOrigins = ['https://medicine-frontend2.vercel.app'];
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, // only if you're using cookies or sessions
+}));
+
 //Save notification setting to MongoDB
 app.use('/api/push', pushRoutes);
 
