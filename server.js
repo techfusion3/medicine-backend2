@@ -18,7 +18,7 @@ const pushRoutes = require('./routes/pushRoutes');
 const app = express();
 
 // Allow the vercel frontend
-const allowedOrigins = ['https://medicine-frontend2.vercel.app'];
+const allowedOrigins = ['https://medicine-frontend2.vercel.app', 'https://www.medicinereminder.xyz'];
 app.use(cors({
   origin: allowedOrigins,
   credentials: true, // only if you're using cookies or sessions
