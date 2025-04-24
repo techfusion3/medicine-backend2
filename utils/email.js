@@ -55,9 +55,9 @@ const sendReminderEmail = async (to, subject, html) => {
   try {
     const response = await resend.emails.send({
       from: 'no-reply@medicinereminder.xyz',
-      to,
-      subject,
-      html,
+      to: to,
+      subject: subject,
+      html: html,
     });
     console.log('Email sent:', response);
   } catch (error) {
