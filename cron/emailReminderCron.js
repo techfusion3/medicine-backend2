@@ -56,7 +56,7 @@ cron.schedule('* * * * *', async () => {
             </div>
           `;
           console.log('📧 HTML content being sent:', html);
-          await sendReminderEmail(user.email, subject, text, html);
+          await sendReminderEmail(user.email, subject, html);
           
 
           await EmailLog.create({
