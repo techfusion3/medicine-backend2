@@ -67,6 +67,7 @@ cron.schedule('* * * * *', async () => {
             email: user.email,
             medicineName,
             timeSent: currentTime,
+            dateSent: new Date().toISOString().split('T')[0],
           });
 
           console.log(`[📧 Email sent] to ${user.email} for ${medicineName} at ${currentTime}`);
