@@ -14,6 +14,7 @@ cron.schedule('* * * * *', async () => {
     const hours = istTime.getHours().toString().padStart(2, '0');
     const minutes = istTime.getMinutes().toString().padStart(2, '0');
     const currentTime = `${hours}:${minutes}`;
+    const currentDate = istTime.toISOString().split('T')[0]; // "YYYY-MM-DD"
 
     const reminders = await Reminder.find({}).lean();
 
@@ -28,6 +29,7 @@ cron.schedule('* * * * *', async () => {
           userId,
           medicineName,
           timeSent: currentTime,
+          dateSent: currentDate,
         });
 
         if (alreadySent) {
