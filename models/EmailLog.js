@@ -21,6 +21,11 @@ const emailLogSchema = new mongoose.Schema({
     required: true, 
     trim: true 
   },
+  dateSent: {
+    type: String,
+    required: true,
+    trim: true
+  },
   sentAt: { 
     type: Date, 
     default: Date.now 
